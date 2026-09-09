@@ -13,7 +13,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 
-var dummyBaseUrl = builder.Configuration.GetValue<string>("DummyJson:BaseUrl");
+var dummyBaseUrl = builder.Configuration.GetValue<string>("DummyJson:BaseUrl") ?? "https://dummyjson.com";
 builder.Services.AddHttpClient<DummyJsonClient>(client =>
 {
     client.BaseAddress = new Uri(dummyBaseUrl);

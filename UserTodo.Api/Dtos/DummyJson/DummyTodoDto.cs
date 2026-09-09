@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace UserTodo.Api.Dtos;
+namespace UserTodo.Api.Dtos.DummyJson;
 
 public class DummyTodoDto
 {
